@@ -46,6 +46,9 @@ Param::Param() {
 	numMnistTestImages = 10000;	// # of testing images in MNIST
 	const double
         l=20;
+	const double
+	ll=10;
+	
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
@@ -53,8 +56,11 @@ Param::Param() {
 	nInput = 400;     // # of neurons in input layer
 	nHide = 100;      // # of neurons in hidden layer
 	nOutput = 10;     // # of neurons in output layer
-	alpha1 =l/100.0;	// Learning rate for the weights from input to hidden layer
-	alpha2 =l/2.0/100.0;	// Learning rate for the weights from hidden to output layer
+	alpha1 = l/100.0;	// Learning rate for the weights from input to hidden layer
+	alpha2 = l/2.0/100.0;	// Learning rate for the weights from hidden to output layer
+	
+	nalpha1 = ll/100;
+	nalpha2 = ll/2.0/100;
 	maxWeight = 1;	// Upper bound of weight value
 	minWeight = -1;	// Lower bound of weight value
     /*Optimization method 
