@@ -552,7 +552,7 @@ void RealDevice::newWrite(double deltaWeightNormalized, double weight, double mi
 	if (deltaWeightNormalized > 0) {	// LTP weight update
 		
 		GpGnCell = false;
-		deltaWeightNormalized = param->dalpha1 / param->alpha1 * totalcondrange/ncondrange*deltaWeightNormalized/(maxWeight-minWeight);
+		deltaWeightNormalized = param->dalpha / param->alpha1 * totalcondrange/ncondrange*deltaWeightNormalized/(maxWeight-minWeight);
 		deltaWeightNormalized = truncate(deltaWeightNormalized, maxNumLevelnLTD);
 		numPulse = deltaWeightNormalized * maxNumLevelnLTD;
 		if (numPulse > maxNumLevelnLTD) {
@@ -570,7 +570,7 @@ void RealDevice::newWrite(double deltaWeightNormalized, double weight, double mi
 		
 		
 		GpGnCell = true;
-		deltaWeightNormalized = -param->dalpha1 / param->alpha1 * totalcondrange/pcondrange*deltaWeightNormalized/(maxWeight-minWeight);
+		deltaWeightNormalized = -param->dalpha / param->alpha1 * totalcondrange/pcondrange*deltaWeightNormalized/(maxWeight-minWeight);
 		deltaWeightNormalized = truncate(deltaWeightNormalized, maxNumLevelpLTD);
 		numPulse = deltaWeightNormalized * maxNumLevelpLTD;
 		if (numPulse > maxNumLevelpLTD) {
