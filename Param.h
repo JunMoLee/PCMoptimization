@@ -58,6 +58,8 @@ public:
 	int nOutput;	// # of neurons in output layer
 	double alpha1;		// Learning rate for the synapses from input to hidden layer
 	double alpha2;		// Learning rate for the synapses from hidden to output layer
+	double nalpha1;
+	double nalpha2;
 	double maxWeight;	// Upper bound of weight value
 	double minWeight;	// Lower bound of weight value
     char* optimization_type;
