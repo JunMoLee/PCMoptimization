@@ -60,6 +60,7 @@ public:
 	double alpha2;		// Learning rate for the synapses from hidden to output layer
 	double nalpha1;
 	double nalpha2;
+	double dalpha;
 	double maxWeight;	// Upper bound of weight value
 	double minWeight;	// Lower bound of weight value
     char* optimization_type;
