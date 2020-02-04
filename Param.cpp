@@ -62,6 +62,19 @@ Param::Param() {
 	dalpha = dl/100;
 	nalpha1 = ll/100;
 	nalpha2 = ll/2.0/100;
+	tp = 12.5;
+	tn = 12.5;
+	kp=97;
+	kd-97;
+	knp=97;
+	knd=97;
+	kc=64;
+	pp= 1
+	pd=-1; 
+	np=1;
+	nd=-1;
+	cp=1;
+	cp=-1;
 	maxWeight = 1;	// Upper bound of weight value
 	minWeight = -1;	// Lower bound of weight value
     /*Optimization method 
