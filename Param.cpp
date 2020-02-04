@@ -69,7 +69,7 @@ Param::Param() {
 	knp=97;
 	knd=97;
 	kc=64;
-	pp= 1
+	pp= 1;
 	pd=-1; 
 	np=1;
 	nd=-1;
