@@ -63,6 +63,20 @@ public:
 	double dalpha;
 	double maxWeight;	// Upper bound of weight value
 	double minWeight;	// Lower bound of weight value
+	double tp; // p on off ratio
+	double tn; // n on off ratio
+	double kp; // mNL pP
+	double kd; // mNL pD
+	double knp; // mNL nP
+	double knd; // mNL nD
+	double kc;
+	double pp; // NL of pP
+	double pd; // NL of pD
+	double np; // NL of nP
+	double nd; //NL of nD
+	double cp; // common NL of P
+	double cd; // common NL of D
+	
     char* optimization_type;
 
 	/* Hardware parameters */
