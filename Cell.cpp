@@ -265,17 +265,15 @@ void IdealDevice::Write(double deltaWeightNormalized, double weight, double minW
 /* Real Device */
 RealDevice::RealDevice(int x, int y, double p, double n) {
 	this->x = x; this->y = y;	// Cell location: x (column) and y (row) start from index 0
-	const double 
-	       tp=12.5;
 	maxConductance= nmaxConductance; // in case of unwanted situations
 	minConductance=0;
 	pminConductance = 3.0769e-9;
-	pmaxConductance = 3.0769e-9 * tp;		// Maximum cell conductance (S)
+	pmaxConductance = 3.0769e-9 * param->tp;		// Maximum cell conductance (S)
 	const double
 		tn=12.5;
 	nminConductance = 3.0769e-9; 
-	nmaxConductance = 3.0769e-9 * tn;
-	refConductance = 3.0769e-9 * tn;
+	nmaxConductance = 3.0769e-9 * param->tn;
+	refConductance = 3.0769e-9 * param->tn;
 	
 	// Minimum cell conductance (S)
 	//maxConductance = 1/4.71e6;
@@ -293,20 +291,12 @@ RealDevice::RealDevice(int x, int y, double p, double n) {
 	writePulseWidthLTP = 300e-6;	// Write pulse width (s) for LTP or weight increase
 	writePulseWidthLTD = 300e-6;	// Write pulse width (s) for LTD or weight decrease
 	writeEnergy = 0;	// Dynamic variable for calculation of write energy (J)
-       const double
-	kc=64;
-	const double
-	       	kp=97;
-	const double
-		kd=97;
-	maxNumLevelpLTP = kc;	// Maximum number of conductance states during LTP or weight increase
-	maxNumLevelpLTD = kc;	// Maximum number of conductance states during LTD or weight decrease
-	const double
-		knp=97;
-	const double
-	        knd=97;
-	maxNumLevelnLTP = kc;
-	maxNumLevelnLTD = kc;
+
+	maxNumLevelpLTP = param->kc;	// Maximum number of conductance states during LTP or weight increase
+	maxNumLevelpLTD = param->kc;	// Maximum number of conductance states during LTD or weight decrease
+
+	maxNumLevelnLTP = param->kc;
+	maxNumLevelnLTD = param->kc;
         maxNumLevelLTP= (maxNumLevelpLTP >  maxNumLevelnLTP)? maxNumLevelpLTP : maxNumLevelnLTP;
 	maxNumLevelLTD= (maxNumLevelpLTD >  maxNumLevelnLTD)? maxNumLevelpLTD : maxNumLevelnLTD;
 	numPulse = 0;	// Number of write pulses used in the most recent write operation (dynamic variable)
@@ -347,20 +337,9 @@ RealDevice::RealDevice(int x, int y, double p, double n) {
 	NL_LTD = -4.88;	// LTD nonlinearity
 
    
-	const double
-		pp=1;
-	const double
-		pd=-1;
-	const double 
-		cp=1;
-	const double
-		cn=-1;
+
 	NL_LTP_Gp=p;
 	NL_LTD_Gp=n;
-	const double
-		np=1;
-	const double
-		nd=-1;
 	NL_LTP_Gn=p;
 	NL_LTD_Gn=n;
 
