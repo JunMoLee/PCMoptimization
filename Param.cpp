@@ -113,7 +113,7 @@ const int
 a=0;
 	
 
-param_gp=0;
+param_gp=1;
 param_gn=-9;
 
 	
