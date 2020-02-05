@@ -45,7 +45,7 @@ Param::Param() {
 	numMnistTrainImages = 60000;// # of training images in MNIST
 	numMnistTestImages = 10000;	// # of testing images in MNIST
 	const double
-        l=40;
+        l=20;
 	const double
 	ll=20;
 	const double
@@ -64,8 +64,8 @@ Param::Param() {
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
 	tn = 12.5;
-	kp=97;
-	kd-97;
+	kp=64;
+	kd=2;
 	knp=97;
 	knd=97;
 	kc=64;
