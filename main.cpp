@@ -137,7 +137,7 @@ int main() {
 		double pof = static_cast<RealDevice*>(arrayIH->cell[0][0])->pmaxConductance/static_cast<RealDevice*>(arrayIH->cell[0][0])->pminConductance;
 		double nof = static_cast<RealDevice*>(arrayIH->cell[0][0])->nmaxConductance/static_cast<RealDevice*>(arrayIH->cell[0][0])->nminConductance;
 	        double LAp = param->alpha1;
-	        double LAd = param->dalpha1;
+	        double LAd = param->dalpha;
 	        int newUpdateRate = param->newUpdateRate;
 
 
