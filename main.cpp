@@ -136,24 +136,25 @@ int main() {
 		int knd = static_cast<RealDevice*>(arrayIH->cell[0][0])->maxNumLevelnLTD;
 		double pof = static_cast<RealDevice*>(arrayIH->cell[0][0])->pmaxConductance/static_cast<RealDevice*>(arrayIH->cell[0][0])->pminConductance;
 		double nof = static_cast<RealDevice*>(arrayIH->cell[0][0])->nmaxConductance/static_cast<RealDevice*>(arrayIH->cell[0][0])->nminConductance;
-	        double LA = param->alpha1;
+	        double LAp = param->alpha1;
+	        double LAd = param->dalpha1;
 	        int newUpdateRate = param->newUpdateRate;
 
 
 														               
-		printf("opt: %s NL_LTP_Gp:%.1f NL_LTD_Gp:%.1f NL_LTP_Gn:%.1f NL_LTD_Gn:%.1f CSpP: %d CSpD: %d CSnP: %d CSnD: %d OnOffGp: %.1f OnOffGn: %.1f LA: %.2f RefreshRate: %d\n", param->optimization_type, NL_LTP_Gp, NL_LTD_Gp, NL_LTP_Gn, NL_LTD_Gn, kp, kd, knp, knd, pof, nof, LA, newUpdateRate);
+		printf("opt: %s NL_LTP_Gp:%.1f NL_LTD_Gp:%.1f NL_LTP_Gn:%.1f NL_LTD_Gn:%.1f CSpP: %d CSpD: %d CSnP: %d CSnD: %d OnOffGp: %.1f OnOffGn: %.1f LAp: %.2f LAd: %.2f RefreshRate: %d\n", param->optimization_type, NL_LTP_Gp, NL_LTD_Gp, NL_LTP_Gn, NL_LTD_Gn, kp, kd, knp, knd, pof, nof, LAp, LAd, newUpdateRate);
 		bool write_or_not=1;
 		fstream read;
-		read.open("g_200203_highCS.csv",fstream::app);                                                         
+		read.open("PCMoptimization1.csv",fstream::app);                                                         
 																	
-		for (int i=1; i<=15; i++) {
+		for (int i=1; i<=10; i++) {
 		cout << "Training Epoch : " << i << endl; 
 		Train(param->numTrainImagesPerEpoch, param->interNumEpochs,param->optimization_type);
 		if (!param->useHardwareInTraining && param->useHardwareInTestingFF) { WeightToConductance(); }
 		Validate();
 		if(write_or_not){
 
-		read <<param->optimization_type<<", "<<NL_LTP_Gp<<", "<<NL_LTD_Gp<<", "<<NL_LTP_Gn<<", "<<NL_LTD_Gn<<", "<<kp<<", "<<kd<<", "<<knp<<", "<<knd<<", "<<LA<<", "<<pof<< ", " <<nof<< ", " <<newUpdateRate<<", "<<i*param->interNumEpochs<< ", "<<(double)correct/param->numMnistTestImages*100 << endl;
+		read <<param->optimization_type<<", "<<NL_LTP_Gp<<", "<<NL_LTD_Gp<<", "<<NL_LTP_Gn<<", "<<NL_LTD_Gn<<", "<<kp<<", "<<kd<<", "<<knp<<", "<<knd<<", "<<LAp<<". "<<LAd<<", "<<pof<< ", " <<nof<< ", " <<newUpdateRate<<", "<<i*param->interNumEpochs<< ", "<<(double)correct/param->numMnistTestImages*100 << endl;
 		
 		}
 		printf("%.2f\n", (double)correct/param->numMnistTestImages*100);
