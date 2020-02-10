@@ -47,7 +47,7 @@ Param::Param() {
 	const double
         l=60;
 	const double
-	ll=20;
+	ll=60;
 	const double
 	dl=700;
 	/* Algorithm parameters */
@@ -64,8 +64,8 @@ Param::Param() {
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
 	tn = 12.5;
-	kp=128;
-	kd=2;
+	kp=64;
+	kd=8;
 	knp=97;
 	knd=97;
 	kc=64;
@@ -107,7 +107,7 @@ Param::Param() {
 
 	RefreshRate = 100;
 	const int 
-	nur=2;
+	nur=12;
 	newUpdateRate = nur; // rate of new update algorithm implementation (per # of images)
 const int
 a=0;
