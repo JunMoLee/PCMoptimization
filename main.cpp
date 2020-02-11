@@ -145,7 +145,7 @@ int main() {
 		printf("opt: %s NL_LTP_Gp:%.1f NL_LTD_Gp:%.1f NL_LTP_Gn:%.1f NL_LTD_Gn:%.1f CSpP: %d CSpD: %d CSnP: %d CSnD: %d OnOffGp: %.1f OnOffGn: %.1f LAp: %.2f LAd: %.2f RefreshRate: %d\n", param->optimization_type, NL_LTP_Gp, NL_LTD_Gp, NL_LTP_Gn, NL_LTD_Gn, kp, kd, knp, knd, pof, nof, LAp, LAd, newUpdateRate);
 		bool write_or_not=1;
 		fstream read;
-		read.open("NPO2.csv",fstream::app);                                                         
+		read.open("NPO4.csv",fstream::app);                                                         
 																	
 		for (int i=1; i<=20; i++) {
 		cout << "Training Epoch : " << i << endl; 
