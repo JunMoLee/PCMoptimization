@@ -49,7 +49,7 @@ Param::Param() {
 	const double
 	ll=60;
 	const double
-	dl=40;
+	dl=100;
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
@@ -110,7 +110,7 @@ Param::Param() {
 	nur=2;
 	newUpdateRate = nur; // rate of new update algorithm implementation (per # of images)
 const int
-a=0;
+a=3;
 	
 
 switch(a){
