@@ -348,9 +348,9 @@ RealDevice::RealDevice(int x, int y, double p, double n) {
 	paramALTP = getParamA(NL_LTP + (*gaussian_dist2)(localGen)) * maxNumLevelLTP;	// Parameter A for LTP nonlinearity
 	paramALTD = getParamA(NL_LTD + (*gaussian_dist2)(localGen)) * maxNumLevelLTD;	// Parameter A for LTD nonlinearity
 	paramAGp= getParamA(NL_LTP_Gp + (*gaussian_dist2)(localGen)) * maxNumLevelpLTP;
-	paramAGpd= getParamA(NL_LTD_Gp + (*gaussian_dist2)(localGen)) * maxNumLevelpLTP;
+	paramAGpd= getParamA(NL_LTD_Gp + (*gaussian_dist2)(localGen)) * maxNumLevelpLTD;
 	paramAGn= getParamA(NL_LTP_Gn + (*gaussian_dist2)(localGen)) * maxNumLevelnLTP;
-	paramAGnd= getParamA(NL_LTD_Gn + (*gaussian_dist2)(localGen)) * maxNumLevelnLTP;
+	paramAGnd= getParamA(NL_LTD_Gn + (*gaussian_dist2)(localGen)) * maxNumLevelnLTD;
 	paramBGp= (pmaxConductance - pminConductance) / (1 - exp(-maxNumLevelpLTP/paramAGp));
 	paramBGpd= (pmaxConductance - pminConductance) / (1 - exp(-maxNumLevelpLTD/paramAGpd));
 	paramBGn= (nmaxConductance - nminConductance) / (1 - exp(-maxNumLevelnLTP/paramAGn));;
