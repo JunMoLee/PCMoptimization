@@ -80,8 +80,12 @@ Param::Param() {
     /*Optimization method 
     Available option include: "SGD", "Momentum", "Adagrad", "RMSprop" and "Adam"*/
     optimization_type = "SGD";
-        ReverseUpdate = 1;
-	FullRefresh= 0;
+	const int
+	nuc=1;
+        ReverseUpdate = nuc;
+	cont int 
+        frc=1;
+	FullRefresh= frc;
 
 	/* Hardware parameters */
 	useHardwareInTrainingFF = true;   // Use hardware in the feed forward part of training or not (true: realistic hardware, false: ideal software)
@@ -104,13 +108,14 @@ Param::Param() {
 	arrayWireWidth = 100;	// Array wire width (nm)
 	processNode = 32;	// Technology node (nm)
 	clkFreq = 2e9;		// Clock frequency (Hz)
-
-	RefreshRate = 100;
+        const int 
+	frr=500;
+	RefreshRate = frr;
 	const int 
 	nur=2;
 	newUpdateRate = nur; // rate of new update algorithm implementation (per # of images)
 const int
-a=3;
+a=1;
 	
 
 switch(a){
