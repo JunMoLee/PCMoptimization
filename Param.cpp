@@ -83,7 +83,7 @@ Param::Param() {
 	const int
 	nuc=1;
         ReverseUpdate = nuc;
-	cont int 
+	const int 
         frc=1;
 	FullRefresh= frc;
 
