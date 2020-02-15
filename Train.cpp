@@ -940,16 +940,16 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 									
 								if(((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1)){
-							        arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false, false, param->dominance);}	
+							        arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false, false, param->dominance);}	
 								else
 									
-							        arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, true);
+							        arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, true);
 									
 									
 								}
 									
 								else{
-								arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
+								arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
 									
 									
 									
@@ -964,17 +964,17 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 									
 								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate)-1)){
-							        arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, true, false, param->dominance);}	
+							        arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, true, false, param->dominance);}	
 								else
 									
-							        arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false);
+							        arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false);
 									
 									
 								}	
 									
 									
 								else{
-								arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
+								arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
 									
 									
 									
@@ -989,10 +989,10 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 								{
 								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1))	
-								arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false, true);
+								arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false, true);
 									
 								else{
-								arrayIH->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
+								arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
 									
 									
 									
