@@ -171,6 +171,10 @@ double Array::ReadCell(int x, int y, char* mode) {
 
 void Array::WriteCell(int x, int y, double deltaWeight, double weight, double maxWeight, double minWeight, 
 						bool regular /* False: ideal write, True: regular write considering device properties */, bool newupdate) {
+	bool positiveupdate=0;
+	if (deltaweight>0)
+	positiveupdate=1;
+		
 	// TODO: include wire resistance
 	if (AnalogNVM *temp = dynamic_cast<AnalogNVM*>(**cell)) // Analog eNVM
     { 
@@ -182,7 +186,7 @@ void Array::WriteCell(int x, int y, double deltaWeight, double weight, double ma
 		}
 		// Reverse update
 		else {
-			static_cast<RealDevice*>(cell[x][y])->newWrite(deltaWeight, weight, minWeight, maxWeight);
+			static_cast<RealDevice*>(cell[x][y])->newWrite(deltaWeight, weight, minWeight, maxWeight, positiveupdate);
 		}
 		
 		
