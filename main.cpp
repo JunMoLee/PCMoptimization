@@ -138,6 +138,7 @@ int main() {
 		double nof = static_cast<RealDevice*>(arrayIH->cell[0][0])->nmaxConductance/static_cast<RealDevice*>(arrayIH->cell[0][0])->nminConductance;
 	        double LAp = param->alpha1;
 	        double LAd = param->dalpha;
+	        double pLAd = param->pdalpha;
 	        int newUpdateRate = param->newUpdateRate;
 	        int RefreshRate =param->RefreshRate;
 	        int FullRefresh =param->FullRefresh;
@@ -146,7 +147,7 @@ int main() {
 
 
 														               
-		printf("opt: %s NL_LTP_Gp:%.1f NL_LTD_Gp:%.1f NL_LTP_Gn:%.1f NL_LTD_Gn:%.1f CSpP: %d CSpD: %d CSnP: %d CSnD: %d OnOffGp: %.1f OnOffGn: %.1f LAp: %.2f LAd: %.2f\n newUpdateRate(Gp): %d\n newUpdateRate(Gn): %d\n RefreshRate: %d\n ReverseUpdate: %d\n FullRefresh: %d\n", param->optimization_type, NL_LTP_Gp, NL_LTD_Gp, NL_LTP_Gn, NL_LTD_Gn, kp, kd, knp, knd, pof, nof, LAp, LAd, newUpdateRate, nnewUpdateRate, RefreshRate, ReverseUpdate, FullRefresh);
+		printf("opt: %s NL_LTP_Gp:%.1f NL_LTD_Gp:%.1f NL_LTP_Gn:%.1f NL_LTD_Gn:%.1f CSpP: %d CSpD: %d CSnP: %d CSnD: %d OnOffGp: %.1f OnOffGn: %.1f LAp: %.2f LAd: %.2f pLAd: %.2f\n newUpdateRate(Gp): %d\n newUpdateRate(Gn): %d\n RefreshRate: %d\n ReverseUpdate: %d\n FullRefresh: %d\n", param->optimization_type, NL_LTP_Gp, NL_LTD_Gp, NL_LTP_Gn, NL_LTD_Gn, kp, kd, knp, knd, pof, nof, LAp, LAd, pLAd, newUpdateRate, nnewUpdateRate, RefreshRate, ReverseUpdate, FullRefresh);
 		bool write_or_not=1;
 		fstream read;
 		read.open("NPO3.csv",fstream::app);                                                         
@@ -158,7 +159,7 @@ int main() {
 		Validate();
 		if(write_or_not){
 
-		read <<param->optimization_type<<", "<<NL_LTP_Gp<<", "<<NL_LTD_Gp<<", "<<NL_LTP_Gn<<", "<<NL_LTD_Gn<<", "<<kp<<", "<<kd<<", "<<knp<<", "<<knd<<", "<<LAp<<", "<<LAd<<", "<<pof<< ", " <<nof<< ", " <<newUpdateRate<<", "<<nnewUpdateRate<<", "<<ReverseUpdate<<", "<<RefreshRate<<", "<<FullRefresh<<", "<<i*param->interNumEpochs<< ", "<<(double)correct/param->numMnistTestImages*100 << endl;
+		read <<param->optimization_type<<", "<<NL_LTP_Gp<<", "<<NL_LTD_Gp<<", "<<NL_LTP_Gn<<", "<<NL_LTD_Gn<<", "<<kp<<", "<<kd<<", "<<knp<<", "<<knd<<", "<<LAp<<", "<<LAd<<", "<<pLAd<<", "<<pof<< ", " <<nof<< ", " <<newUpdateRate<<", "<<nnewUpdateRate<<", "<<ReverseUpdate<<", "<<RefreshRate<<", "<<FullRefresh<<", "<<i*param->interNumEpochs<< ", "<<(double)correct/param->numMnistTestImages*100 << endl;
 		
 		}
 		printf("%.2f\n", (double)correct/param->numMnistTestImages*100);
