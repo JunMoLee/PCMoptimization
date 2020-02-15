@@ -105,6 +105,7 @@ public:
 	bool FullRefresh;
 	int RefreshRate;
 	int newUpdateRate;
+	int nnewUpdateRate;
 	bool ReverseUpdate;
 };
 
