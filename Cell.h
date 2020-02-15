@@ -207,7 +207,7 @@ public:
 	RealDevice(int x, int y, double p, double  n);
 	double Read(double voltage);	// Return read current (A)
 	void Write(double deltaWeightNormalized, double weight, double minWeight, double maxWeight);
-	void newWrite(double deltaWeightNormalized, double weight, double minWeight, double maxWeight);
+	void newWrite(double deltaWeightNormalized, double weight, double minWeight, double maxWeight, bool positiveupdate);
 	void Erase();
 };
 
