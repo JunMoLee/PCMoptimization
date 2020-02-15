@@ -869,12 +869,12 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 							if (AnalogNVM *temp = dynamic_cast<AnalogNVM*>(arrayHO->cell[jj][k])) { // Analog eNVM
 								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1)){
 									
-                                                                arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true);}
+                                                                arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, true);}
 								
 								
 								else if (((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate)-1)){
 							
-								 arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
+								 arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false);
 									
 								}
 								
