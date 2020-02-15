@@ -50,6 +50,8 @@ Param::Param() {
 	ll=60;
 	const double
 	dl=60;
+	const double
+	pdl=40;
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
@@ -60,6 +62,7 @@ Param::Param() {
 	alpha1 = l/100.0;	// Learning rate for the weights from input to hidden layer
 	alpha2 = l/2.0/100.0;	// Learning rate for the weights from hidden to output layer
 	dalpha = dl/100;
+	pdalpha = pdl/100;
 	nalpha1 = l/100;
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
