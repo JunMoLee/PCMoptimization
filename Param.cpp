@@ -78,6 +78,9 @@ Param::Param() {
 	nd=-1;
 	cp=1;
 	cp=-1;
+	const int
+	dom = 1;
+	dominance=dom;
 	maxWeight = 1;	// Upper bound of weight value
 	minWeight = -1;	// Lower bound of weight value
     /*Optimization method 
