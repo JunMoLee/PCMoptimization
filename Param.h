@@ -107,6 +107,7 @@ public:
 	int RefreshRate;
 	int newUpdateRate;
 	int nnewUpdateRate;
+	int dominance=0;
 	bool ReverseUpdate;
 };
 
