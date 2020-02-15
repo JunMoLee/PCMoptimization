@@ -172,7 +172,7 @@ double Array::ReadCell(int x, int y, char* mode) {
 void Array::WriteCell(int x, int y, double deltaWeight, double weight, double maxWeight, double minWeight, 
 						bool regular /* False: ideal write, True: regular write considering device properties */, bool newupdate) {
 	bool positiveupdate=0;
-	if (deltaweight>0)
+	if (deltaWeight>0)
 	positiveupdate=1;
 		
 	// TODO: include wire resistance
