@@ -61,6 +61,7 @@ public:
 	double nalpha1;
 	double nalpha2;
 	double dalpha;
+	double pdalpha;
 	double maxWeight;	// Upper bound of weight value
 	double minWeight;	// Lower bound of weight value
 	double tp; // p on off ratio
