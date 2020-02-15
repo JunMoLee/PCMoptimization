@@ -115,10 +115,10 @@ Param::Param() {
 	frr=500;
 	RefreshRate = frr;
 	const int 
-	nur=3;
+	nur=6;
 	newUpdateRate = nur; // rate of new update algorithm implementation (per # of images)
 	const int
-	nurn=4;
+	nurn=2;
 	nnewUpdateRate = nurn;
 const int
 a=1;
