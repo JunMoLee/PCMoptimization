@@ -170,7 +170,7 @@ double Array::ReadCell(int x, int y, char* mode) {
 }
 
 void Array::WriteCell(int x, int y, double deltaWeight, double weight, double maxWeight, double minWeight, 
-						bool regular /* False: ideal write, True: regular write considering device properties */, bool newupdate, bool PositiveUpdate, bool regularupdate) {
+						bool regular /* False: ideal write, True: regular write considering device properties */, bool newupdate, bool PositiveUpdate, bool regularupdate, bool dominance) {
 	bool positiveupdate=PositiveUpdate;
 	bool deltaweightsign = 0;
 	if (deltaWeight>0)
@@ -186,7 +186,7 @@ void Array::WriteCell(int x, int y, double deltaWeight, double weight, double ma
 			static_cast<AnalogNVM*>(cell[x][y])->Write(deltaWeight, weight, minWeight, maxWeight);
 		}
 		// Reverse update
-		else {  if(!regularupdate)
+		else {  if(!regularupdate&&!dominance)
 			static_cast<RealDevice*>(cell[x][y])->newWrite(deltaWeight, weight, minWeight, maxWeight, positiveupdate);
 		      else
 			static_cast<RealDevice*>(cell[x][y])->newWrite(deltaWeight, weight, minWeight, maxWeight, deltaweightsign);
