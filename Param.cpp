@@ -45,15 +45,15 @@ Param::Param() {
 	numMnistTrainImages = 60000;// # of training images in MNIST
 	numMnistTestImages = 10000;	// # of testing images in MNIST
 	const double
-        l=40;
+        l=30;
 	const double
 	ll=60;
 	const double
-	dl=40;
+	dl=30;
 	const double
 	pdl=10;
 	const double
-	rdl=10;
+	rdl=300/25;
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
@@ -81,7 +81,7 @@ Param::Param() {
 	cp=1;
 	cp=-1;
 	const int
-	dom=0;
+	dom=1;
 	dominance=dom;
 	maxWeight = 1;	// Upper bound of weight value
 	minWeight = -1;	// Lower bound of weight value
@@ -92,7 +92,7 @@ Param::Param() {
 	nuc=1;
         ReverseUpdate = nuc;
 	const int 
-        frc=1;
+        frc=0;
 	FullRefresh= frc;
 
 	/* Hardware parameters */
@@ -122,13 +122,13 @@ Param::Param() {
 	const int 
 	nur=2;
 	const int 
-	rnur=1;
+	rnur=3;
 	const int
-	nurn=2;
+	nurn=3;
 	newUpdateRate = nurn*rnur; // rate of new update algorithm implementation (per # of images)
 	nnewUpdateRate =nurn;
 const int
-a=0;
+a=11;
 	
 
 switch(a){
@@ -178,7 +178,7 @@ param_gn=-3;
 break;
 case 11:
 param_gp=1;
-param_gn=-5;
+param_gn=-8;
 break;
 }
 	
