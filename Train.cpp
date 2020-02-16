@@ -101,7 +101,7 @@ double RMSprop(double gradient, double learning_rate, double gradSquarePrev,doub
 double Adam(double gradient, double learning_rate, double momentumPreV, double velocityPrev, double BETA1=0.1, double BETA2=0.7, double EPSILON=2E-1);
 
 
-void Train(const int numTrain, const int epochs, char *optimization_type) {
+void Train(const int numTrain, const int epochs, char *optimization_type, bool stopreset) {
 int numBatchReadSynapse;	    // # of read synapses in a batch read operation (decide later)
 int numBatchWriteSynapse;	// # of write synapses in a batch write operation (decide later)
 double outN1[param->nHide]; // Net input to the hidden layer [param->nHide]
@@ -540,7 +540,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
                             
 							if (AnalogNVM *temp = dynamic_cast<AnalogNVM*>(arrayIH->cell[jj][k])) {	// Analog eNVM
 								
-								
+								if (!stopreset){
 								if (param->newUpdateRate<param->nnewUpdateRate){
 								
 								
@@ -612,7 +612,10 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 								}
 								
-							
+								}
+							else {
+							arrayIH->WriteCell(jj, k, deltaWeight1[jj][k], weight1[jj][k], param->maxWeight, param->minWeight, true, false);
+							}
 									
 									
 							
@@ -928,7 +931,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
                         */			
 				
 							if (AnalogNVM *temp = dynamic_cast<AnalogNVM*>(arrayHO->cell[jj][k])) { // Analog eNVM
-								
+								if (!stopreset){
 								if (param->newUpdateRate<param->nnewUpdateRate){
 								
 								
@@ -1000,7 +1003,11 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 								}
 								
-								
+								}
+							
+								else{
+								arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, false);
+								}
 								
 								
 								
@@ -1204,7 +1211,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 			}
 			
 			/// conductance saturation management: Full-Reset /// 
-			if(param -> FullRefresh){
+			if(!stopreset&&(param -> FullRefresh)){
 				
 			if (batchSize % param->RefreshRate == (param->RefreshRate-1)) { //ERASE
 				for (int j = 0; j < param->nHide; j++) {
