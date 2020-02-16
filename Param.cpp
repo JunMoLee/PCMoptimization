@@ -53,7 +53,7 @@ Param::Param() {
 	const double
 	pdl=10;
 	const double
-	rdl=10;
+	rdl=12;
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
