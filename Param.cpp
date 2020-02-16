@@ -45,15 +45,15 @@ Param::Param() {
 	numMnistTrainImages = 60000;// # of training images in MNIST
 	numMnistTestImages = 10000;	// # of testing images in MNIST
 	const double
-        l=20;
+        l=40;
 	const double
 	ll=60;
 	const double
-	dl=20;
+	dl=60;
 	const double
 	pdl=10;
 	const double
-	rdl=12;
+	rdl=10;
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
@@ -69,8 +69,8 @@ Param::Param() {
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
 	tn = 12.5;
-	kp=64;
-	kd=64;
+	kp=128;
+	kd=128;
 	knp=97;
 	knd=97;
 	kc=64;
@@ -92,7 +92,7 @@ Param::Param() {
 	nuc=1;
         ReverseUpdate = nuc;
 	const int 
-        frc=0;
+        frc=1;
 	FullRefresh= frc;
 
 	/* Hardware parameters */
@@ -117,7 +117,7 @@ Param::Param() {
 	processNode = 32;	// Technology node (nm)
 	clkFreq = 2e9;		// Clock frequency (Hz)
         const int 
-	frr=500;
+	frr=4000;
 	RefreshRate = frr;
 	const int 
 	nur=2;
