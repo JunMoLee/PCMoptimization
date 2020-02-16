@@ -51,7 +51,7 @@ Param::Param() {
 	const double
 	dl=30;
 	const double
-	pdl=dl/rdl*10;
+	pdl=10;
 	const double
 	rdl=10;
 	/* Algorithm parameters */
@@ -64,7 +64,7 @@ Param::Param() {
 	alpha1 = l/100.0;	// Learning rate for the weights from input to hidden layer
 	alpha2 = l/2.0/100.0;	// Learning rate for the weights from hidden to output layer
 	dalpha = dl/100;
-	pdalpha = pdl/100;
+	pdalpha = dl/rdl*10/100;
 	nalpha1 = l/100;
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
@@ -81,7 +81,7 @@ Param::Param() {
 	cp=1;
 	cp=-1;
 	const int
-	dom = 0;
+	dom=0;
 	dominance=dom;
 	maxWeight = 1;	// Upper bound of weight value
 	minWeight = -1;	// Lower bound of weight value
@@ -120,12 +120,12 @@ Param::Param() {
 	frr=500;
 	RefreshRate = frr;
 	const int 
-	nur=nurn*rnur;
+	nur=2;
 	const int 
 	rnur=1;
-	newUpdateRate = nur; // rate of new update algorithm implementation (per # of images)
 	const int
 	nurn=2;
+	newUpdateRate = nurn*rnur; // rate of new update algorithm implementation (per # of images)
 	nnewUpdateRate =nurn;
 const int
 a=0;
