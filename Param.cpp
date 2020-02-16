@@ -45,11 +45,11 @@ Param::Param() {
 	numMnistTrainImages = 60000;// # of training images in MNIST
 	numMnistTestImages = 10000;	// # of testing images in MNIST
 	const double
-        l=30;
+        l=20;
 	const double
 	ll=60;
 	const double
-	dl=30;
+	dl=20;
 	const double
 	pdl=10;
 	const double
@@ -69,8 +69,8 @@ Param::Param() {
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
 	tn = 12.5;
-	kp=128;
-	kd=128;
+	kp=64;
+	kd=64;
 	knp=97;
 	knd=97;
 	kc=64;
@@ -128,7 +128,7 @@ Param::Param() {
 	newUpdateRate = nurn*rnur; // rate of new update algorithm implementation (per # of images)
 	nnewUpdateRate =nurn;
 const int
-a=0;
+a=2;
 	
 
 switch(a){
