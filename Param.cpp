@@ -128,21 +128,21 @@ Param::Param() {
 	newUpdateRate = nurn*rnur; // rate of new update algorithm implementation (per # of images)
 	nnewUpdateRate =nurn;
 const int
-a=2;
+a=0;
 	
 
 switch(a){
 case 0:
 param_gp=1;
-param_gn=-1;
+param_gn=-9;
 break;
 case 1:
 param_gp=1;
-param_gn=-9;
+param_gn=-3;
 break;
 case 2:
 param_gp=1;
-param_gn=-3;
+param_gn=-1;
 break;
 case 3:
 param_gp=2;
