@@ -597,7 +597,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 								}
 								
-								else if (param->newUpdateRate=param->nnewUpdateRate)
+								else if (param->newUpdateRate==param->nnewUpdateRate)
 									
 								{
 								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1))	
@@ -988,7 +988,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 									
 								}
 								
-								else if (param->newUpdateRate=param->nnewUpdateRate)
+								else if (param->newUpdateRate==param->nnewUpdateRate)
 									
 								{
 								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1))	
