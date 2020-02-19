@@ -103,12 +103,12 @@ public:
 	double clkFreq;		// Clock frequency (Hz)
         double param_gp;
         double param_gn;
-	bool FullRefresh;
+	int FullRefresh;
 	int RefreshRate;
 	int newUpdateRate;
 	int nnewUpdateRate;
 	int dominance=0;
-	bool ReverseUpdate;
+	int ReverseUpdate;
 };
 
 #endif
