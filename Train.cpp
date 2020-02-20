@@ -548,10 +548,10 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 
 								
 								
-								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1)){
+								if((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate-1)){
 									
 									
-								if(((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1)){
+								if((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==((param->newUpdateRate-1)){
 							        arrayIH->WriteCell(jj, k, deltaWeight1[jj][k], weight1[jj][k], param->maxWeight, param->minWeight, true, true, false, false, param->dominance);}	
 								else
 									
@@ -572,10 +572,10 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 								
 								else if (param->newUpdateRate>param->nnewUpdateRate){
 									
-								if(((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate)-1)){
+								if((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate-1)){
 									
 									
-								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate)-1)){
+								if((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate-1)){
 							        arrayIH->WriteCell(jj, k, deltaWeight1[jj][k], weight1[jj][k], param->maxWeight, param->minWeight, true, true, true, false, param->dominance);}	
 								else
 									
@@ -600,7 +600,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 								else if (param->newUpdateRate==param->nnewUpdateRate)
 									
 								{
-								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1))	
+								if((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate-1))	
 								arrayIH->WriteCell(jj, k, deltaWeight1[jj][k], weight1[jj][k], param->maxWeight, param->minWeight, true, true, false, true);
 									
 								else{
@@ -939,10 +939,10 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 
 								
 								
-								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1)){
+								if((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate-1)){
 									
 									
-								if(((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1)){
+								if((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->newUpdateRate-1)){
 							        arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false, false, param->dominance);}	
 								else
 									
@@ -963,10 +963,10 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 								
 								else if (param->newUpdateRate>param->nnewUpdateRate){
 									
-								if(((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate)-1)){
+								if((batchSize % param->nnewUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate-1)){
 									
 									
-								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate)-1)){
+								if((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->nnewUpdateRate-1)){
 							        arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, true, false, param->dominance);}	
 								else
 									
@@ -991,7 +991,7 @@ double s2[param->nOutput];  // Output delta from hidden layer to the output laye
 								else if (param->newUpdateRate==param->nnewUpdateRate)
 									
 								{
-								if(((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate)-1))	
+								if((batchSize % param->newUpdateRate)*param->ReverseUpdate==(param->newUpdateRate-1))	
 								arrayHO->WriteCell(jj, k, deltaWeight2[jj][k], weight2[jj][k], param->maxWeight, param->minWeight, true, true, false, true);
 									
 								else{
