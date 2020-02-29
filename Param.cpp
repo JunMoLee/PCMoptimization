@@ -45,15 +45,15 @@ Param::Param() {
 	numMnistTrainImages = 60000;// # of training images in MNIST
 	numMnistTestImages = 10000;	// # of testing images in MNIST
 	const double
-        l=40;
+        l=5;
 	const double
 	ll=60;
 	const double
-	dl=30;
+	dl=5;
 	const double
-	pdl=10;
+	pdl=5;
 	const double
-	rdl=300/25;
+	rdl=10;
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch
 	totalNumEpochs = 125;	// Total number of epochs
@@ -63,8 +63,8 @@ Param::Param() {
 	nOutput = 10;     // # of neurons in output layer
 	alpha1 = l/100.0;	// Learning rate for the weights from input to hidden layer
 	alpha2 = l/2.0/100.0;	// Learning rate for the weights from hidden to output layer
-	dalpha = dl/100;
-	pdalpha = dl/rdl*10/100;
+	dalpha = l/100;
+	pdalpha = l/100;
 	nalpha1 = l/100;
 	nalpha2 = l/2.0/100;
 	tp = 12.5;
@@ -89,7 +89,7 @@ Param::Param() {
     Available option include: "SGD", "Momentum", "Adagrad", "RMSprop" and "Adam"*/
     optimization_type = "SGD";
 	const int
-	nuc=0;
+	nuc=1;
         ReverseUpdate = nuc;
 	const int 
         frc=1;
@@ -117,14 +117,14 @@ Param::Param() {
 	processNode = 32;	// Technology node (nm)
 	clkFreq = 2e9;		// Clock frequency (Hz)
         const int 
-	frr=2000;
+	frr=500;
 	RefreshRate = frr;
 	const int 
 	nur=2;
 	const int 
-	rnur=3;
+	rnur=1;
 	const int
-	nurn=3;
+	nurn=10;
 	newUpdateRate = nurn*rnur; // rate of new update algorithm implementation (per # of images)
 	nnewUpdateRate =nurn;
 const int
